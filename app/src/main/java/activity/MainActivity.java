@@ -1,12 +1,9 @@
 package activity;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -124,7 +121,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
      * 设置默认导航栏
      */
     private void setDefaultFragment() {
-        FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         mHomeFragment = HomeFragment.newInstance();
         transaction.replace(R.id.fragment_container, mHomeFragment);
@@ -136,7 +133,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
      */
     @Override
     public void onTabSelected(int position) {
-        FragmentManager fm = this.getFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         //开启事务
         FragmentTransaction transaction = fm.beginTransaction();
         switch (position) {

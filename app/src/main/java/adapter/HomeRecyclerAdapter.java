@@ -44,7 +44,6 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
             mOnItemClickListener.onLongClick(position);
             return true;
         });
-
         if(mContext != null){
             Glide.with(mContext).load(mbean.get(position).getImgUrl()).into(holder.mImage);
         }
